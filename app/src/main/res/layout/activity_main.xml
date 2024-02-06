@@ -7,7 +7,8 @@
     // layout for textbox (Happy Birthday!)
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <TextView
             android:id="@+id/textView"
@@ -15,7 +16,8 @@
             android:layout_height="wrap_content"
             android:text="Happy Birthday!"
             android:textColor="#FF9800"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:gravity="center"/>
     </LinearLayout>
 
     // layout for cake
@@ -41,13 +43,14 @@
 
         // first sublayout is for the slider
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_weight="10"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20sp">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/happyBirthday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
@@ -56,35 +59,41 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:max="5"
+                android:progress="2" />
         </LinearLayout>
 
         // second sublayout is for the switches
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20sp">
 
             <Switch
                 android:id="@+id/frostingSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Frosting" />
+                android:text="Frosting"
+                android:checked="true"/>
 
             <Switch
                 android:id="@+id/candlesSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Candles" />
+                android:text="Candles"
+                android:checked="true"/>
         </LinearLayout>
 
         // third sublayout is for the buttons
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20sp">
 
             <Button
                 android:id="@+id/blowButton"
@@ -97,8 +106,9 @@
                 android:id="@+id/byeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:text="Goodbye" />
+                android:onClick="goodbye"
+                android:text="Goodbye"
+                android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
