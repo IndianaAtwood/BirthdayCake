@@ -11,10 +11,7 @@ import android.widget.Switch;
 public class CakeView extends SurfaceView {
 
     private CakeModel myModel = new CakeModel();
-
-    public CakeModel getCakeModel() {
-        return myModel;
-    }
+    public CakeModel getCakeModel() {return myModel;}
 
     /* These are the paints we'll use to draw the birthday cake below */
     Paint cakePaint = new Paint();
@@ -127,11 +124,10 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
-        // COME BACK TO THIS FOR CHECKPOINT FOUR!!!!
-        for (int i = 0; i < myModel.numOfCandles; i++) {
-            //Now a candle in the center
-            drawCandle(canvas, cakeLeft + cakeWidth / 5 - candleWidth / 2, cakeTop);
-            drawCandle(canvas, cakeLeft + i * (cakeWidth / 5) - candleWidth / 2, cakeTop);
+        // Draws the candles based on the user input from the SeekBar
+        int candles = myModel.numOfCandles;
+        for (int i = 1; i <= candles; i++) {
+            drawCandle(canvas, cakeLeft + i * (cakeWidth / (candles+1)) - candleWidth / 2, cakeTop);
         }
 
     }//onDraw
